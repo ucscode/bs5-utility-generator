@@ -75,7 +75,7 @@ class Generator
 
             foreach($this->vars as $index => $attribute) {
                 
-                $selector = sprintf(".fs-%s%s", !empty($size) ? "{$size}-" : '', $index);
+                $selector = sprintf(".fs-%s%spx", !empty($size) ? "{$size}-" : '', $index);
                 $value = sprintf("font-size: var(%s);", $attribute['name']);
                 
                 $this->style[$size] ??= [
