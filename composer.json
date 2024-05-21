@@ -1,0 +1,11 @@
+{
+    "name": "ucscode/bootstrap-responsive-fontsize",
+    "description": "Generate a bootstrap responsive fontsize stylesheet.css",
+    "license": "MIT",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Ucscode\\Style\\": "src/"
+        }
+    }
+}

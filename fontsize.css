@@ -1,0 +1,748 @@
+/*!
+* Responsive Font Size Stylesheet
+*
+* This stylesheet provides a set of utility classes for responsive font sizes,
+* compatible with Bootstrap 5's breakpoints. It leverages CSS custom properties
+* (variables) to allow easy customization and scalability of font sizes across
+* different screen sizes.
+*
+* Features:
+* - Responsive font size classes using Bootstrap breakpoints (xs, sm, md, lg, xl, xxl).
+* - Utilizes CSS variables for flexible and maintainable font size management.
+* - Easy integration with Bootstrap 5 projects.
+* - Simple to extend with additional font sizes or custom breakpoints.
+*
+* Author: Uchenna Ajah
+* Repository: https://github.com/ucscode/bootstrap-responsive-stylesheet
+* Version: 1.0.0
+* License: MIT
+*/
+
+:root {
+	--ucs-fontsize-1: 1px;
+	--ucs-fontsize-2: 2px;
+	--ucs-fontsize-3: 3px;
+	--ucs-fontsize-4: 4px;
+	--ucs-fontsize-5: 5px;
+	--ucs-fontsize-6: 6px;
+	--ucs-fontsize-7: 7px;
+	--ucs-fontsize-8: 8px;
+	--ucs-fontsize-9: 9px;
+	--ucs-fontsize-10: 10px;
+	--ucs-fontsize-11: 11px;
+	--ucs-fontsize-12: 12px;
+	--ucs-fontsize-13: 13px;
+	--ucs-fontsize-14: 14px;
+	--ucs-fontsize-15: 15px;
+	--ucs-fontsize-16: 16px;
+	--ucs-fontsize-17: 17px;
+	--ucs-fontsize-18: 18px;
+	--ucs-fontsize-19: 19px;
+	--ucs-fontsize-20: 20px;
+	--ucs-fontsize-21: 21px;
+	--ucs-fontsize-22: 22px;
+	--ucs-fontsize-23: 23px;
+	--ucs-fontsize-24: 24px;
+	--ucs-fontsize-25: 25px;
+	--ucs-fontsize-26: 26px;
+	--ucs-fontsize-27: 27px;
+	--ucs-fontsize-28: 28px;
+	--ucs-fontsize-29: 29px;
+	--ucs-fontsize-30: 30px;
+	--ucs-fontsize-31: 31px;
+	--ucs-fontsize-32: 32px;
+	--ucs-fontsize-33: 33px;
+	--ucs-fontsize-34: 34px;
+	--ucs-fontsize-35: 35px;
+	--ucs-fontsize-36: 36px;
+	--ucs-fontsize-37: 37px;
+	--ucs-fontsize-38: 38px;
+	--ucs-fontsize-39: 39px;
+	--ucs-fontsize-40: 40px;
+	--ucs-fontsize-41: 41px;
+	--ucs-fontsize-42: 42px;
+	--ucs-fontsize-43: 43px;
+	--ucs-fontsize-44: 44px;
+	--ucs-fontsize-45: 45px;
+	--ucs-fontsize-46: 46px;
+	--ucs-fontsize-47: 47px;
+	--ucs-fontsize-48: 48px;
+	--ucs-fontsize-49: 49px;
+	--ucs-fontsize-50: 50px;
+	--ucs-fontsize-51: 51px;
+	--ucs-fontsize-52: 52px;
+	--ucs-fontsize-53: 53px;
+	--ucs-fontsize-54: 54px;
+	--ucs-fontsize-55: 55px;
+	--ucs-fontsize-56: 56px;
+	--ucs-fontsize-57: 57px;
+	--ucs-fontsize-58: 58px;
+	--ucs-fontsize-59: 59px;
+	--ucs-fontsize-60: 60px;
+	--ucs-fontsize-61: 61px;
+	--ucs-fontsize-62: 62px;
+	--ucs-fontsize-63: 63px;
+	--ucs-fontsize-64: 64px;
+	--ucs-fontsize-65: 65px;
+	--ucs-fontsize-66: 66px;
+	--ucs-fontsize-67: 67px;
+	--ucs-fontsize-68: 68px;
+	--ucs-fontsize-69: 69px;
+	--ucs-fontsize-70: 70px;
+	--ucs-fontsize-71: 71px;
+	--ucs-fontsize-72: 72px;
+	--ucs-fontsize-73: 73px;
+	--ucs-fontsize-74: 74px;
+	--ucs-fontsize-75: 75px;
+	--ucs-fontsize-76: 76px;
+	--ucs-fontsize-77: 77px;
+	--ucs-fontsize-78: 78px;
+	--ucs-fontsize-79: 79px;
+	--ucs-fontsize-80: 80px;
+	--ucs-fontsize-81: 81px;
+	--ucs-fontsize-82: 82px;
+	--ucs-fontsize-83: 83px;
+	--ucs-fontsize-84: 84px;
+	--ucs-fontsize-85: 85px;
+	--ucs-fontsize-86: 86px;
+	--ucs-fontsize-87: 87px;
+	--ucs-fontsize-88: 88px;
+	--ucs-fontsize-89: 89px;
+	--ucs-fontsize-90: 90px;
+	--ucs-fontsize-91: 91px;
+	--ucs-fontsize-92: 92px;
+	--ucs-fontsize-93: 93px;
+	--ucs-fontsize-94: 94px;
+	--ucs-fontsize-95: 95px;
+	--ucs-fontsize-96: 96px;
+	--ucs-fontsize-97: 97px;
+	--ucs-fontsize-98: 98px;
+	--ucs-fontsize-99: 99px;
+	--ucs-fontsize-100: 100px;
+}
+
+.fs-1 { font-size: var(--ucs-fontsize-1); }
+.fs-2 { font-size: var(--ucs-fontsize-2); }
+.fs-3 { font-size: var(--ucs-fontsize-3); }
+.fs-4 { font-size: var(--ucs-fontsize-4); }
+.fs-5 { font-size: var(--ucs-fontsize-5); }
+.fs-6 { font-size: var(--ucs-fontsize-6); }
+.fs-7 { font-size: var(--ucs-fontsize-7); }
+.fs-8 { font-size: var(--ucs-fontsize-8); }
+.fs-9 { font-size: var(--ucs-fontsize-9); }
+.fs-10 { font-size: var(--ucs-fontsize-10); }
+.fs-11 { font-size: var(--ucs-fontsize-11); }
+.fs-12 { font-size: var(--ucs-fontsize-12); }
+.fs-13 { font-size: var(--ucs-fontsize-13); }
+.fs-14 { font-size: var(--ucs-fontsize-14); }
+.fs-15 { font-size: var(--ucs-fontsize-15); }
+.fs-16 { font-size: var(--ucs-fontsize-16); }
+.fs-17 { font-size: var(--ucs-fontsize-17); }
+.fs-18 { font-size: var(--ucs-fontsize-18); }
+.fs-19 { font-size: var(--ucs-fontsize-19); }
+.fs-20 { font-size: var(--ucs-fontsize-20); }
+.fs-21 { font-size: var(--ucs-fontsize-21); }
+.fs-22 { font-size: var(--ucs-fontsize-22); }
+.fs-23 { font-size: var(--ucs-fontsize-23); }
+.fs-24 { font-size: var(--ucs-fontsize-24); }
+.fs-25 { font-size: var(--ucs-fontsize-25); }
+.fs-26 { font-size: var(--ucs-fontsize-26); }
+.fs-27 { font-size: var(--ucs-fontsize-27); }
+.fs-28 { font-size: var(--ucs-fontsize-28); }
+.fs-29 { font-size: var(--ucs-fontsize-29); }
+.fs-30 { font-size: var(--ucs-fontsize-30); }
+.fs-31 { font-size: var(--ucs-fontsize-31); }
+.fs-32 { font-size: var(--ucs-fontsize-32); }
+.fs-33 { font-size: var(--ucs-fontsize-33); }
+.fs-34 { font-size: var(--ucs-fontsize-34); }
+.fs-35 { font-size: var(--ucs-fontsize-35); }
+.fs-36 { font-size: var(--ucs-fontsize-36); }
+.fs-37 { font-size: var(--ucs-fontsize-37); }
+.fs-38 { font-size: var(--ucs-fontsize-38); }
+.fs-39 { font-size: var(--ucs-fontsize-39); }
+.fs-40 { font-size: var(--ucs-fontsize-40); }
+.fs-41 { font-size: var(--ucs-fontsize-41); }
+.fs-42 { font-size: var(--ucs-fontsize-42); }
+.fs-43 { font-size: var(--ucs-fontsize-43); }
+.fs-44 { font-size: var(--ucs-fontsize-44); }
+.fs-45 { font-size: var(--ucs-fontsize-45); }
+.fs-46 { font-size: var(--ucs-fontsize-46); }
+.fs-47 { font-size: var(--ucs-fontsize-47); }
+.fs-48 { font-size: var(--ucs-fontsize-48); }
+.fs-49 { font-size: var(--ucs-fontsize-49); }
+.fs-50 { font-size: var(--ucs-fontsize-50); }
+.fs-51 { font-size: var(--ucs-fontsize-51); }
+.fs-52 { font-size: var(--ucs-fontsize-52); }
+.fs-53 { font-size: var(--ucs-fontsize-53); }
+.fs-54 { font-size: var(--ucs-fontsize-54); }
+.fs-55 { font-size: var(--ucs-fontsize-55); }
+.fs-56 { font-size: var(--ucs-fontsize-56); }
+.fs-57 { font-size: var(--ucs-fontsize-57); }
+.fs-58 { font-size: var(--ucs-fontsize-58); }
+.fs-59 { font-size: var(--ucs-fontsize-59); }
+.fs-60 { font-size: var(--ucs-fontsize-60); }
+.fs-61 { font-size: var(--ucs-fontsize-61); }
+.fs-62 { font-size: var(--ucs-fontsize-62); }
+.fs-63 { font-size: var(--ucs-fontsize-63); }
+.fs-64 { font-size: var(--ucs-fontsize-64); }
+.fs-65 { font-size: var(--ucs-fontsize-65); }
+.fs-66 { font-size: var(--ucs-fontsize-66); }
+.fs-67 { font-size: var(--ucs-fontsize-67); }
+.fs-68 { font-size: var(--ucs-fontsize-68); }
+.fs-69 { font-size: var(--ucs-fontsize-69); }
+.fs-70 { font-size: var(--ucs-fontsize-70); }
+.fs-71 { font-size: var(--ucs-fontsize-71); }
+.fs-72 { font-size: var(--ucs-fontsize-72); }
+.fs-73 { font-size: var(--ucs-fontsize-73); }
+.fs-74 { font-size: var(--ucs-fontsize-74); }
+.fs-75 { font-size: var(--ucs-fontsize-75); }
+.fs-76 { font-size: var(--ucs-fontsize-76); }
+.fs-77 { font-size: var(--ucs-fontsize-77); }
+.fs-78 { font-size: var(--ucs-fontsize-78); }
+.fs-79 { font-size: var(--ucs-fontsize-79); }
+.fs-80 { font-size: var(--ucs-fontsize-80); }
+.fs-81 { font-size: var(--ucs-fontsize-81); }
+.fs-82 { font-size: var(--ucs-fontsize-82); }
+.fs-83 { font-size: var(--ucs-fontsize-83); }
+.fs-84 { font-size: var(--ucs-fontsize-84); }
+.fs-85 { font-size: var(--ucs-fontsize-85); }
+.fs-86 { font-size: var(--ucs-fontsize-86); }
+.fs-87 { font-size: var(--ucs-fontsize-87); }
+.fs-88 { font-size: var(--ucs-fontsize-88); }
+.fs-89 { font-size: var(--ucs-fontsize-89); }
+.fs-90 { font-size: var(--ucs-fontsize-90); }
+.fs-91 { font-size: var(--ucs-fontsize-91); }
+.fs-92 { font-size: var(--ucs-fontsize-92); }
+.fs-93 { font-size: var(--ucs-fontsize-93); }
+.fs-94 { font-size: var(--ucs-fontsize-94); }
+.fs-95 { font-size: var(--ucs-fontsize-95); }
+.fs-96 { font-size: var(--ucs-fontsize-96); }
+.fs-97 { font-size: var(--ucs-fontsize-97); }
+.fs-98 { font-size: var(--ucs-fontsize-98); }
+.fs-99 { font-size: var(--ucs-fontsize-99); }
+.fs-100 { font-size: var(--ucs-fontsize-100); }
+
+@media (min-width:576px) {
+
+	.fs-sm-1 { font-size: var(--ucs-fontsize-1); }
+	.fs-sm-2 { font-size: var(--ucs-fontsize-2); }
+	.fs-sm-3 { font-size: var(--ucs-fontsize-3); }
+	.fs-sm-4 { font-size: var(--ucs-fontsize-4); }
+	.fs-sm-5 { font-size: var(--ucs-fontsize-5); }
+	.fs-sm-6 { font-size: var(--ucs-fontsize-6); }
+	.fs-sm-7 { font-size: var(--ucs-fontsize-7); }
+	.fs-sm-8 { font-size: var(--ucs-fontsize-8); }
+	.fs-sm-9 { font-size: var(--ucs-fontsize-9); }
+	.fs-sm-10 { font-size: var(--ucs-fontsize-10); }
+	.fs-sm-11 { font-size: var(--ucs-fontsize-11); }
+	.fs-sm-12 { font-size: var(--ucs-fontsize-12); }
+	.fs-sm-13 { font-size: var(--ucs-fontsize-13); }
+	.fs-sm-14 { font-size: var(--ucs-fontsize-14); }
+	.fs-sm-15 { font-size: var(--ucs-fontsize-15); }
+	.fs-sm-16 { font-size: var(--ucs-fontsize-16); }
+	.fs-sm-17 { font-size: var(--ucs-fontsize-17); }
+	.fs-sm-18 { font-size: var(--ucs-fontsize-18); }
+	.fs-sm-19 { font-size: var(--ucs-fontsize-19); }
+	.fs-sm-20 { font-size: var(--ucs-fontsize-20); }
+	.fs-sm-21 { font-size: var(--ucs-fontsize-21); }
+	.fs-sm-22 { font-size: var(--ucs-fontsize-22); }
+	.fs-sm-23 { font-size: var(--ucs-fontsize-23); }
+	.fs-sm-24 { font-size: var(--ucs-fontsize-24); }
+	.fs-sm-25 { font-size: var(--ucs-fontsize-25); }
+	.fs-sm-26 { font-size: var(--ucs-fontsize-26); }
+	.fs-sm-27 { font-size: var(--ucs-fontsize-27); }
+	.fs-sm-28 { font-size: var(--ucs-fontsize-28); }
+	.fs-sm-29 { font-size: var(--ucs-fontsize-29); }
+	.fs-sm-30 { font-size: var(--ucs-fontsize-30); }
+	.fs-sm-31 { font-size: var(--ucs-fontsize-31); }
+	.fs-sm-32 { font-size: var(--ucs-fontsize-32); }
+	.fs-sm-33 { font-size: var(--ucs-fontsize-33); }
+	.fs-sm-34 { font-size: var(--ucs-fontsize-34); }
+	.fs-sm-35 { font-size: var(--ucs-fontsize-35); }
+	.fs-sm-36 { font-size: var(--ucs-fontsize-36); }
+	.fs-sm-37 { font-size: var(--ucs-fontsize-37); }
+	.fs-sm-38 { font-size: var(--ucs-fontsize-38); }
+	.fs-sm-39 { font-size: var(--ucs-fontsize-39); }
+	.fs-sm-40 { font-size: var(--ucs-fontsize-40); }
+	.fs-sm-41 { font-size: var(--ucs-fontsize-41); }
+	.fs-sm-42 { font-size: var(--ucs-fontsize-42); }
+	.fs-sm-43 { font-size: var(--ucs-fontsize-43); }
+	.fs-sm-44 { font-size: var(--ucs-fontsize-44); }
+	.fs-sm-45 { font-size: var(--ucs-fontsize-45); }
+	.fs-sm-46 { font-size: var(--ucs-fontsize-46); }
+	.fs-sm-47 { font-size: var(--ucs-fontsize-47); }
+	.fs-sm-48 { font-size: var(--ucs-fontsize-48); }
+	.fs-sm-49 { font-size: var(--ucs-fontsize-49); }
+	.fs-sm-50 { font-size: var(--ucs-fontsize-50); }
+	.fs-sm-51 { font-size: var(--ucs-fontsize-51); }
+	.fs-sm-52 { font-size: var(--ucs-fontsize-52); }
+	.fs-sm-53 { font-size: var(--ucs-fontsize-53); }
+	.fs-sm-54 { font-size: var(--ucs-fontsize-54); }
+	.fs-sm-55 { font-size: var(--ucs-fontsize-55); }
+	.fs-sm-56 { font-size: var(--ucs-fontsize-56); }
+	.fs-sm-57 { font-size: var(--ucs-fontsize-57); }
+	.fs-sm-58 { font-size: var(--ucs-fontsize-58); }
+	.fs-sm-59 { font-size: var(--ucs-fontsize-59); }
+	.fs-sm-60 { font-size: var(--ucs-fontsize-60); }
+	.fs-sm-61 { font-size: var(--ucs-fontsize-61); }
+	.fs-sm-62 { font-size: var(--ucs-fontsize-62); }
+	.fs-sm-63 { font-size: var(--ucs-fontsize-63); }
+	.fs-sm-64 { font-size: var(--ucs-fontsize-64); }
+	.fs-sm-65 { font-size: var(--ucs-fontsize-65); }
+	.fs-sm-66 { font-size: var(--ucs-fontsize-66); }
+	.fs-sm-67 { font-size: var(--ucs-fontsize-67); }
+	.fs-sm-68 { font-size: var(--ucs-fontsize-68); }
+	.fs-sm-69 { font-size: var(--ucs-fontsize-69); }
+	.fs-sm-70 { font-size: var(--ucs-fontsize-70); }
+	.fs-sm-71 { font-size: var(--ucs-fontsize-71); }
+	.fs-sm-72 { font-size: var(--ucs-fontsize-72); }
+	.fs-sm-73 { font-size: var(--ucs-fontsize-73); }
+	.fs-sm-74 { font-size: var(--ucs-fontsize-74); }
+	.fs-sm-75 { font-size: var(--ucs-fontsize-75); }
+	.fs-sm-76 { font-size: var(--ucs-fontsize-76); }
+	.fs-sm-77 { font-size: var(--ucs-fontsize-77); }
+	.fs-sm-78 { font-size: var(--ucs-fontsize-78); }
+	.fs-sm-79 { font-size: var(--ucs-fontsize-79); }
+	.fs-sm-80 { font-size: var(--ucs-fontsize-80); }
+	.fs-sm-81 { font-size: var(--ucs-fontsize-81); }
+	.fs-sm-82 { font-size: var(--ucs-fontsize-82); }
+	.fs-sm-83 { font-size: var(--ucs-fontsize-83); }
+	.fs-sm-84 { font-size: var(--ucs-fontsize-84); }
+	.fs-sm-85 { font-size: var(--ucs-fontsize-85); }
+	.fs-sm-86 { font-size: var(--ucs-fontsize-86); }
+	.fs-sm-87 { font-size: var(--ucs-fontsize-87); }
+	.fs-sm-88 { font-size: var(--ucs-fontsize-88); }
+	.fs-sm-89 { font-size: var(--ucs-fontsize-89); }
+	.fs-sm-90 { font-size: var(--ucs-fontsize-90); }
+	.fs-sm-91 { font-size: var(--ucs-fontsize-91); }
+	.fs-sm-92 { font-size: var(--ucs-fontsize-92); }
+	.fs-sm-93 { font-size: var(--ucs-fontsize-93); }
+	.fs-sm-94 { font-size: var(--ucs-fontsize-94); }
+	.fs-sm-95 { font-size: var(--ucs-fontsize-95); }
+	.fs-sm-96 { font-size: var(--ucs-fontsize-96); }
+	.fs-sm-97 { font-size: var(--ucs-fontsize-97); }
+	.fs-sm-98 { font-size: var(--ucs-fontsize-98); }
+	.fs-sm-99 { font-size: var(--ucs-fontsize-99); }
+	.fs-sm-100 { font-size: var(--ucs-fontsize-100); }
+
+}
+
+@media (min-width:768px) {
+
+	.fs-md-1 { font-size: var(--ucs-fontsize-1); }
+	.fs-md-2 { font-size: var(--ucs-fontsize-2); }
+	.fs-md-3 { font-size: var(--ucs-fontsize-3); }
+	.fs-md-4 { font-size: var(--ucs-fontsize-4); }
+	.fs-md-5 { font-size: var(--ucs-fontsize-5); }
+	.fs-md-6 { font-size: var(--ucs-fontsize-6); }
+	.fs-md-7 { font-size: var(--ucs-fontsize-7); }
+	.fs-md-8 { font-size: var(--ucs-fontsize-8); }
+	.fs-md-9 { font-size: var(--ucs-fontsize-9); }
+	.fs-md-10 { font-size: var(--ucs-fontsize-10); }
+	.fs-md-11 { font-size: var(--ucs-fontsize-11); }
+	.fs-md-12 { font-size: var(--ucs-fontsize-12); }
+	.fs-md-13 { font-size: var(--ucs-fontsize-13); }
+	.fs-md-14 { font-size: var(--ucs-fontsize-14); }
+	.fs-md-15 { font-size: var(--ucs-fontsize-15); }
+	.fs-md-16 { font-size: var(--ucs-fontsize-16); }
+	.fs-md-17 { font-size: var(--ucs-fontsize-17); }
+	.fs-md-18 { font-size: var(--ucs-fontsize-18); }
+	.fs-md-19 { font-size: var(--ucs-fontsize-19); }
+	.fs-md-20 { font-size: var(--ucs-fontsize-20); }
+	.fs-md-21 { font-size: var(--ucs-fontsize-21); }
+	.fs-md-22 { font-size: var(--ucs-fontsize-22); }
+	.fs-md-23 { font-size: var(--ucs-fontsize-23); }
+	.fs-md-24 { font-size: var(--ucs-fontsize-24); }
+	.fs-md-25 { font-size: var(--ucs-fontsize-25); }
+	.fs-md-26 { font-size: var(--ucs-fontsize-26); }
+	.fs-md-27 { font-size: var(--ucs-fontsize-27); }
+	.fs-md-28 { font-size: var(--ucs-fontsize-28); }
+	.fs-md-29 { font-size: var(--ucs-fontsize-29); }
+	.fs-md-30 { font-size: var(--ucs-fontsize-30); }
+	.fs-md-31 { font-size: var(--ucs-fontsize-31); }
+	.fs-md-32 { font-size: var(--ucs-fontsize-32); }
+	.fs-md-33 { font-size: var(--ucs-fontsize-33); }
+	.fs-md-34 { font-size: var(--ucs-fontsize-34); }
+	.fs-md-35 { font-size: var(--ucs-fontsize-35); }
+	.fs-md-36 { font-size: var(--ucs-fontsize-36); }
+	.fs-md-37 { font-size: var(--ucs-fontsize-37); }
+	.fs-md-38 { font-size: var(--ucs-fontsize-38); }
+	.fs-md-39 { font-size: var(--ucs-fontsize-39); }
+	.fs-md-40 { font-size: var(--ucs-fontsize-40); }
+	.fs-md-41 { font-size: var(--ucs-fontsize-41); }
+	.fs-md-42 { font-size: var(--ucs-fontsize-42); }
+	.fs-md-43 { font-size: var(--ucs-fontsize-43); }
+	.fs-md-44 { font-size: var(--ucs-fontsize-44); }
+	.fs-md-45 { font-size: var(--ucs-fontsize-45); }
+	.fs-md-46 { font-size: var(--ucs-fontsize-46); }
+	.fs-md-47 { font-size: var(--ucs-fontsize-47); }
+	.fs-md-48 { font-size: var(--ucs-fontsize-48); }
+	.fs-md-49 { font-size: var(--ucs-fontsize-49); }
+	.fs-md-50 { font-size: var(--ucs-fontsize-50); }
+	.fs-md-51 { font-size: var(--ucs-fontsize-51); }
+	.fs-md-52 { font-size: var(--ucs-fontsize-52); }
+	.fs-md-53 { font-size: var(--ucs-fontsize-53); }
+	.fs-md-54 { font-size: var(--ucs-fontsize-54); }
+	.fs-md-55 { font-size: var(--ucs-fontsize-55); }
+	.fs-md-56 { font-size: var(--ucs-fontsize-56); }
+	.fs-md-57 { font-size: var(--ucs-fontsize-57); }
+	.fs-md-58 { font-size: var(--ucs-fontsize-58); }
+	.fs-md-59 { font-size: var(--ucs-fontsize-59); }
+	.fs-md-60 { font-size: var(--ucs-fontsize-60); }
+	.fs-md-61 { font-size: var(--ucs-fontsize-61); }
+	.fs-md-62 { font-size: var(--ucs-fontsize-62); }
+	.fs-md-63 { font-size: var(--ucs-fontsize-63); }
+	.fs-md-64 { font-size: var(--ucs-fontsize-64); }
+	.fs-md-65 { font-size: var(--ucs-fontsize-65); }
+	.fs-md-66 { font-size: var(--ucs-fontsize-66); }
+	.fs-md-67 { font-size: var(--ucs-fontsize-67); }
+	.fs-md-68 { font-size: var(--ucs-fontsize-68); }
+	.fs-md-69 { font-size: var(--ucs-fontsize-69); }
+	.fs-md-70 { font-size: var(--ucs-fontsize-70); }
+	.fs-md-71 { font-size: var(--ucs-fontsize-71); }
+	.fs-md-72 { font-size: var(--ucs-fontsize-72); }
+	.fs-md-73 { font-size: var(--ucs-fontsize-73); }
+	.fs-md-74 { font-size: var(--ucs-fontsize-74); }
+	.fs-md-75 { font-size: var(--ucs-fontsize-75); }
+	.fs-md-76 { font-size: var(--ucs-fontsize-76); }
+	.fs-md-77 { font-size: var(--ucs-fontsize-77); }
+	.fs-md-78 { font-size: var(--ucs-fontsize-78); }
+	.fs-md-79 { font-size: var(--ucs-fontsize-79); }
+	.fs-md-80 { font-size: var(--ucs-fontsize-80); }
+	.fs-md-81 { font-size: var(--ucs-fontsize-81); }
+	.fs-md-82 { font-size: var(--ucs-fontsize-82); }
+	.fs-md-83 { font-size: var(--ucs-fontsize-83); }
+	.fs-md-84 { font-size: var(--ucs-fontsize-84); }
+	.fs-md-85 { font-size: var(--ucs-fontsize-85); }
+	.fs-md-86 { font-size: var(--ucs-fontsize-86); }
+	.fs-md-87 { font-size: var(--ucs-fontsize-87); }
+	.fs-md-88 { font-size: var(--ucs-fontsize-88); }
+	.fs-md-89 { font-size: var(--ucs-fontsize-89); }
+	.fs-md-90 { font-size: var(--ucs-fontsize-90); }
+	.fs-md-91 { font-size: var(--ucs-fontsize-91); }
+	.fs-md-92 { font-size: var(--ucs-fontsize-92); }
+	.fs-md-93 { font-size: var(--ucs-fontsize-93); }
+	.fs-md-94 { font-size: var(--ucs-fontsize-94); }
+	.fs-md-95 { font-size: var(--ucs-fontsize-95); }
+	.fs-md-96 { font-size: var(--ucs-fontsize-96); }
+	.fs-md-97 { font-size: var(--ucs-fontsize-97); }
+	.fs-md-98 { font-size: var(--ucs-fontsize-98); }
+	.fs-md-99 { font-size: var(--ucs-fontsize-99); }
+	.fs-md-100 { font-size: var(--ucs-fontsize-100); }
+
+}
+
+@media (min-width:992px) {
+
+	.fs-lg-1 { font-size: var(--ucs-fontsize-1); }
+	.fs-lg-2 { font-size: var(--ucs-fontsize-2); }
+	.fs-lg-3 { font-size: var(--ucs-fontsize-3); }
+	.fs-lg-4 { font-size: var(--ucs-fontsize-4); }
+	.fs-lg-5 { font-size: var(--ucs-fontsize-5); }
+	.fs-lg-6 { font-size: var(--ucs-fontsize-6); }
+	.fs-lg-7 { font-size: var(--ucs-fontsize-7); }
+	.fs-lg-8 { font-size: var(--ucs-fontsize-8); }
+	.fs-lg-9 { font-size: var(--ucs-fontsize-9); }
+	.fs-lg-10 { font-size: var(--ucs-fontsize-10); }
+	.fs-lg-11 { font-size: var(--ucs-fontsize-11); }
+	.fs-lg-12 { font-size: var(--ucs-fontsize-12); }
+	.fs-lg-13 { font-size: var(--ucs-fontsize-13); }
+	.fs-lg-14 { font-size: var(--ucs-fontsize-14); }
+	.fs-lg-15 { font-size: var(--ucs-fontsize-15); }
+	.fs-lg-16 { font-size: var(--ucs-fontsize-16); }
+	.fs-lg-17 { font-size: var(--ucs-fontsize-17); }
+	.fs-lg-18 { font-size: var(--ucs-fontsize-18); }
+	.fs-lg-19 { font-size: var(--ucs-fontsize-19); }
+	.fs-lg-20 { font-size: var(--ucs-fontsize-20); }
+	.fs-lg-21 { font-size: var(--ucs-fontsize-21); }
+	.fs-lg-22 { font-size: var(--ucs-fontsize-22); }
+	.fs-lg-23 { font-size: var(--ucs-fontsize-23); }
+	.fs-lg-24 { font-size: var(--ucs-fontsize-24); }
+	.fs-lg-25 { font-size: var(--ucs-fontsize-25); }
+	.fs-lg-26 { font-size: var(--ucs-fontsize-26); }
+	.fs-lg-27 { font-size: var(--ucs-fontsize-27); }
+	.fs-lg-28 { font-size: var(--ucs-fontsize-28); }
+	.fs-lg-29 { font-size: var(--ucs-fontsize-29); }
+	.fs-lg-30 { font-size: var(--ucs-fontsize-30); }
+	.fs-lg-31 { font-size: var(--ucs-fontsize-31); }
+	.fs-lg-32 { font-size: var(--ucs-fontsize-32); }
+	.fs-lg-33 { font-size: var(--ucs-fontsize-33); }
+	.fs-lg-34 { font-size: var(--ucs-fontsize-34); }
+	.fs-lg-35 { font-size: var(--ucs-fontsize-35); }
+	.fs-lg-36 { font-size: var(--ucs-fontsize-36); }
+	.fs-lg-37 { font-size: var(--ucs-fontsize-37); }
+	.fs-lg-38 { font-size: var(--ucs-fontsize-38); }
+	.fs-lg-39 { font-size: var(--ucs-fontsize-39); }
+	.fs-lg-40 { font-size: var(--ucs-fontsize-40); }
+	.fs-lg-41 { font-size: var(--ucs-fontsize-41); }
+	.fs-lg-42 { font-size: var(--ucs-fontsize-42); }
+	.fs-lg-43 { font-size: var(--ucs-fontsize-43); }
+	.fs-lg-44 { font-size: var(--ucs-fontsize-44); }
+	.fs-lg-45 { font-size: var(--ucs-fontsize-45); }
+	.fs-lg-46 { font-size: var(--ucs-fontsize-46); }
+	.fs-lg-47 { font-size: var(--ucs-fontsize-47); }
+	.fs-lg-48 { font-size: var(--ucs-fontsize-48); }
+	.fs-lg-49 { font-size: var(--ucs-fontsize-49); }
+	.fs-lg-50 { font-size: var(--ucs-fontsize-50); }
+	.fs-lg-51 { font-size: var(--ucs-fontsize-51); }
+	.fs-lg-52 { font-size: var(--ucs-fontsize-52); }
+	.fs-lg-53 { font-size: var(--ucs-fontsize-53); }
+	.fs-lg-54 { font-size: var(--ucs-fontsize-54); }
+	.fs-lg-55 { font-size: var(--ucs-fontsize-55); }
+	.fs-lg-56 { font-size: var(--ucs-fontsize-56); }
+	.fs-lg-57 { font-size: var(--ucs-fontsize-57); }
+	.fs-lg-58 { font-size: var(--ucs-fontsize-58); }
+	.fs-lg-59 { font-size: var(--ucs-fontsize-59); }
+	.fs-lg-60 { font-size: var(--ucs-fontsize-60); }
+	.fs-lg-61 { font-size: var(--ucs-fontsize-61); }
+	.fs-lg-62 { font-size: var(--ucs-fontsize-62); }
+	.fs-lg-63 { font-size: var(--ucs-fontsize-63); }
+	.fs-lg-64 { font-size: var(--ucs-fontsize-64); }
+	.fs-lg-65 { font-size: var(--ucs-fontsize-65); }
+	.fs-lg-66 { font-size: var(--ucs-fontsize-66); }
+	.fs-lg-67 { font-size: var(--ucs-fontsize-67); }
+	.fs-lg-68 { font-size: var(--ucs-fontsize-68); }
+	.fs-lg-69 { font-size: var(--ucs-fontsize-69); }
+	.fs-lg-70 { font-size: var(--ucs-fontsize-70); }
+	.fs-lg-71 { font-size: var(--ucs-fontsize-71); }
+	.fs-lg-72 { font-size: var(--ucs-fontsize-72); }
+	.fs-lg-73 { font-size: var(--ucs-fontsize-73); }
+	.fs-lg-74 { font-size: var(--ucs-fontsize-74); }
+	.fs-lg-75 { font-size: var(--ucs-fontsize-75); }
+	.fs-lg-76 { font-size: var(--ucs-fontsize-76); }
+	.fs-lg-77 { font-size: var(--ucs-fontsize-77); }
+	.fs-lg-78 { font-size: var(--ucs-fontsize-78); }
+	.fs-lg-79 { font-size: var(--ucs-fontsize-79); }
+	.fs-lg-80 { font-size: var(--ucs-fontsize-80); }
+	.fs-lg-81 { font-size: var(--ucs-fontsize-81); }
+	.fs-lg-82 { font-size: var(--ucs-fontsize-82); }
+	.fs-lg-83 { font-size: var(--ucs-fontsize-83); }
+	.fs-lg-84 { font-size: var(--ucs-fontsize-84); }
+	.fs-lg-85 { font-size: var(--ucs-fontsize-85); }
+	.fs-lg-86 { font-size: var(--ucs-fontsize-86); }
+	.fs-lg-87 { font-size: var(--ucs-fontsize-87); }
+	.fs-lg-88 { font-size: var(--ucs-fontsize-88); }
+	.fs-lg-89 { font-size: var(--ucs-fontsize-89); }
+	.fs-lg-90 { font-size: var(--ucs-fontsize-90); }
+	.fs-lg-91 { font-size: var(--ucs-fontsize-91); }
+	.fs-lg-92 { font-size: var(--ucs-fontsize-92); }
+	.fs-lg-93 { font-size: var(--ucs-fontsize-93); }
+	.fs-lg-94 { font-size: var(--ucs-fontsize-94); }
+	.fs-lg-95 { font-size: var(--ucs-fontsize-95); }
+	.fs-lg-96 { font-size: var(--ucs-fontsize-96); }
+	.fs-lg-97 { font-size: var(--ucs-fontsize-97); }
+	.fs-lg-98 { font-size: var(--ucs-fontsize-98); }
+	.fs-lg-99 { font-size: var(--ucs-fontsize-99); }
+	.fs-lg-100 { font-size: var(--ucs-fontsize-100); }
+
+}
+
+@media (min-width:1200px) {
+
+	.fs-xl-1 { font-size: var(--ucs-fontsize-1); }
+	.fs-xl-2 { font-size: var(--ucs-fontsize-2); }
+	.fs-xl-3 { font-size: var(--ucs-fontsize-3); }
+	.fs-xl-4 { font-size: var(--ucs-fontsize-4); }
+	.fs-xl-5 { font-size: var(--ucs-fontsize-5); }
+	.fs-xl-6 { font-size: var(--ucs-fontsize-6); }
+	.fs-xl-7 { font-size: var(--ucs-fontsize-7); }
+	.fs-xl-8 { font-size: var(--ucs-fontsize-8); }
+	.fs-xl-9 { font-size: var(--ucs-fontsize-9); }
+	.fs-xl-10 { font-size: var(--ucs-fontsize-10); }
+	.fs-xl-11 { font-size: var(--ucs-fontsize-11); }
+	.fs-xl-12 { font-size: var(--ucs-fontsize-12); }
+	.fs-xl-13 { font-size: var(--ucs-fontsize-13); }
+	.fs-xl-14 { font-size: var(--ucs-fontsize-14); }
+	.fs-xl-15 { font-size: var(--ucs-fontsize-15); }
+	.fs-xl-16 { font-size: var(--ucs-fontsize-16); }
+	.fs-xl-17 { font-size: var(--ucs-fontsize-17); }
+	.fs-xl-18 { font-size: var(--ucs-fontsize-18); }
+	.fs-xl-19 { font-size: var(--ucs-fontsize-19); }
+	.fs-xl-20 { font-size: var(--ucs-fontsize-20); }
+	.fs-xl-21 { font-size: var(--ucs-fontsize-21); }
+	.fs-xl-22 { font-size: var(--ucs-fontsize-22); }
+	.fs-xl-23 { font-size: var(--ucs-fontsize-23); }
+	.fs-xl-24 { font-size: var(--ucs-fontsize-24); }
+	.fs-xl-25 { font-size: var(--ucs-fontsize-25); }
+	.fs-xl-26 { font-size: var(--ucs-fontsize-26); }
+	.fs-xl-27 { font-size: var(--ucs-fontsize-27); }
+	.fs-xl-28 { font-size: var(--ucs-fontsize-28); }
+	.fs-xl-29 { font-size: var(--ucs-fontsize-29); }
+	.fs-xl-30 { font-size: var(--ucs-fontsize-30); }
+	.fs-xl-31 { font-size: var(--ucs-fontsize-31); }
+	.fs-xl-32 { font-size: var(--ucs-fontsize-32); }
+	.fs-xl-33 { font-size: var(--ucs-fontsize-33); }
+	.fs-xl-34 { font-size: var(--ucs-fontsize-34); }
+	.fs-xl-35 { font-size: var(--ucs-fontsize-35); }
+	.fs-xl-36 { font-size: var(--ucs-fontsize-36); }
+	.fs-xl-37 { font-size: var(--ucs-fontsize-37); }
+	.fs-xl-38 { font-size: var(--ucs-fontsize-38); }
+	.fs-xl-39 { font-size: var(--ucs-fontsize-39); }
+	.fs-xl-40 { font-size: var(--ucs-fontsize-40); }
+	.fs-xl-41 { font-size: var(--ucs-fontsize-41); }
+	.fs-xl-42 { font-size: var(--ucs-fontsize-42); }
+	.fs-xl-43 { font-size: var(--ucs-fontsize-43); }
+	.fs-xl-44 { font-size: var(--ucs-fontsize-44); }
+	.fs-xl-45 { font-size: var(--ucs-fontsize-45); }
+	.fs-xl-46 { font-size: var(--ucs-fontsize-46); }
+	.fs-xl-47 { font-size: var(--ucs-fontsize-47); }
+	.fs-xl-48 { font-size: var(--ucs-fontsize-48); }
+	.fs-xl-49 { font-size: var(--ucs-fontsize-49); }
+	.fs-xl-50 { font-size: var(--ucs-fontsize-50); }
+	.fs-xl-51 { font-size: var(--ucs-fontsize-51); }
+	.fs-xl-52 { font-size: var(--ucs-fontsize-52); }
+	.fs-xl-53 { font-size: var(--ucs-fontsize-53); }
+	.fs-xl-54 { font-size: var(--ucs-fontsize-54); }
+	.fs-xl-55 { font-size: var(--ucs-fontsize-55); }
+	.fs-xl-56 { font-size: var(--ucs-fontsize-56); }
+	.fs-xl-57 { font-size: var(--ucs-fontsize-57); }
+	.fs-xl-58 { font-size: var(--ucs-fontsize-58); }
+	.fs-xl-59 { font-size: var(--ucs-fontsize-59); }
+	.fs-xl-60 { font-size: var(--ucs-fontsize-60); }
+	.fs-xl-61 { font-size: var(--ucs-fontsize-61); }
+	.fs-xl-62 { font-size: var(--ucs-fontsize-62); }
+	.fs-xl-63 { font-size: var(--ucs-fontsize-63); }
+	.fs-xl-64 { font-size: var(--ucs-fontsize-64); }
+	.fs-xl-65 { font-size: var(--ucs-fontsize-65); }
+	.fs-xl-66 { font-size: var(--ucs-fontsize-66); }
+	.fs-xl-67 { font-size: var(--ucs-fontsize-67); }
+	.fs-xl-68 { font-size: var(--ucs-fontsize-68); }
+	.fs-xl-69 { font-size: var(--ucs-fontsize-69); }
+	.fs-xl-70 { font-size: var(--ucs-fontsize-70); }
+	.fs-xl-71 { font-size: var(--ucs-fontsize-71); }
+	.fs-xl-72 { font-size: var(--ucs-fontsize-72); }
+	.fs-xl-73 { font-size: var(--ucs-fontsize-73); }
+	.fs-xl-74 { font-size: var(--ucs-fontsize-74); }
+	.fs-xl-75 { font-size: var(--ucs-fontsize-75); }
+	.fs-xl-76 { font-size: var(--ucs-fontsize-76); }
+	.fs-xl-77 { font-size: var(--ucs-fontsize-77); }
+	.fs-xl-78 { font-size: var(--ucs-fontsize-78); }
+	.fs-xl-79 { font-size: var(--ucs-fontsize-79); }
+	.fs-xl-80 { font-size: var(--ucs-fontsize-80); }
+	.fs-xl-81 { font-size: var(--ucs-fontsize-81); }
+	.fs-xl-82 { font-size: var(--ucs-fontsize-82); }
+	.fs-xl-83 { font-size: var(--ucs-fontsize-83); }
+	.fs-xl-84 { font-size: var(--ucs-fontsize-84); }
+	.fs-xl-85 { font-size: var(--ucs-fontsize-85); }
+	.fs-xl-86 { font-size: var(--ucs-fontsize-86); }
+	.fs-xl-87 { font-size: var(--ucs-fontsize-87); }
+	.fs-xl-88 { font-size: var(--ucs-fontsize-88); }
+	.fs-xl-89 { font-size: var(--ucs-fontsize-89); }
+	.fs-xl-90 { font-size: var(--ucs-fontsize-90); }
+	.fs-xl-91 { font-size: var(--ucs-fontsize-91); }
+	.fs-xl-92 { font-size: var(--ucs-fontsize-92); }
+	.fs-xl-93 { font-size: var(--ucs-fontsize-93); }
+	.fs-xl-94 { font-size: var(--ucs-fontsize-94); }
+	.fs-xl-95 { font-size: var(--ucs-fontsize-95); }
+	.fs-xl-96 { font-size: var(--ucs-fontsize-96); }
+	.fs-xl-97 { font-size: var(--ucs-fontsize-97); }
+	.fs-xl-98 { font-size: var(--ucs-fontsize-98); }
+	.fs-xl-99 { font-size: var(--ucs-fontsize-99); }
+	.fs-xl-100 { font-size: var(--ucs-fontsize-100); }
+
+}
+
+@media (min-width:1400px) {
+
+	.fs-xxl-1 { font-size: var(--ucs-fontsize-1); }
+	.fs-xxl-2 { font-size: var(--ucs-fontsize-2); }
+	.fs-xxl-3 { font-size: var(--ucs-fontsize-3); }
+	.fs-xxl-4 { font-size: var(--ucs-fontsize-4); }
+	.fs-xxl-5 { font-size: var(--ucs-fontsize-5); }
+	.fs-xxl-6 { font-size: var(--ucs-fontsize-6); }
+	.fs-xxl-7 { font-size: var(--ucs-fontsize-7); }
+	.fs-xxl-8 { font-size: var(--ucs-fontsize-8); }
+	.fs-xxl-9 { font-size: var(--ucs-fontsize-9); }
+	.fs-xxl-10 { font-size: var(--ucs-fontsize-10); }
+	.fs-xxl-11 { font-size: var(--ucs-fontsize-11); }
+	.fs-xxl-12 { font-size: var(--ucs-fontsize-12); }
+	.fs-xxl-13 { font-size: var(--ucs-fontsize-13); }
+	.fs-xxl-14 { font-size: var(--ucs-fontsize-14); }
+	.fs-xxl-15 { font-size: var(--ucs-fontsize-15); }
+	.fs-xxl-16 { font-size: var(--ucs-fontsize-16); }
+	.fs-xxl-17 { font-size: var(--ucs-fontsize-17); }
+	.fs-xxl-18 { font-size: var(--ucs-fontsize-18); }
+	.fs-xxl-19 { font-size: var(--ucs-fontsize-19); }
+	.fs-xxl-20 { font-size: var(--ucs-fontsize-20); }
+	.fs-xxl-21 { font-size: var(--ucs-fontsize-21); }
+	.fs-xxl-22 { font-size: var(--ucs-fontsize-22); }
+	.fs-xxl-23 { font-size: var(--ucs-fontsize-23); }
+	.fs-xxl-24 { font-size: var(--ucs-fontsize-24); }
+	.fs-xxl-25 { font-size: var(--ucs-fontsize-25); }
+	.fs-xxl-26 { font-size: var(--ucs-fontsize-26); }
+	.fs-xxl-27 { font-size: var(--ucs-fontsize-27); }
+	.fs-xxl-28 { font-size: var(--ucs-fontsize-28); }
+	.fs-xxl-29 { font-size: var(--ucs-fontsize-29); }
+	.fs-xxl-30 { font-size: var(--ucs-fontsize-30); }
+	.fs-xxl-31 { font-size: var(--ucs-fontsize-31); }
+	.fs-xxl-32 { font-size: var(--ucs-fontsize-32); }
+	.fs-xxl-33 { font-size: var(--ucs-fontsize-33); }
+	.fs-xxl-34 { font-size: var(--ucs-fontsize-34); }
+	.fs-xxl-35 { font-size: var(--ucs-fontsize-35); }
+	.fs-xxl-36 { font-size: var(--ucs-fontsize-36); }
+	.fs-xxl-37 { font-size: var(--ucs-fontsize-37); }
+	.fs-xxl-38 { font-size: var(--ucs-fontsize-38); }
+	.fs-xxl-39 { font-size: var(--ucs-fontsize-39); }
+	.fs-xxl-40 { font-size: var(--ucs-fontsize-40); }
+	.fs-xxl-41 { font-size: var(--ucs-fontsize-41); }
+	.fs-xxl-42 { font-size: var(--ucs-fontsize-42); }
+	.fs-xxl-43 { font-size: var(--ucs-fontsize-43); }
+	.fs-xxl-44 { font-size: var(--ucs-fontsize-44); }
+	.fs-xxl-45 { font-size: var(--ucs-fontsize-45); }
+	.fs-xxl-46 { font-size: var(--ucs-fontsize-46); }
+	.fs-xxl-47 { font-size: var(--ucs-fontsize-47); }
+	.fs-xxl-48 { font-size: var(--ucs-fontsize-48); }
+	.fs-xxl-49 { font-size: var(--ucs-fontsize-49); }
+	.fs-xxl-50 { font-size: var(--ucs-fontsize-50); }
+	.fs-xxl-51 { font-size: var(--ucs-fontsize-51); }
+	.fs-xxl-52 { font-size: var(--ucs-fontsize-52); }
+	.fs-xxl-53 { font-size: var(--ucs-fontsize-53); }
+	.fs-xxl-54 { font-size: var(--ucs-fontsize-54); }
+	.fs-xxl-55 { font-size: var(--ucs-fontsize-55); }
+	.fs-xxl-56 { font-size: var(--ucs-fontsize-56); }
+	.fs-xxl-57 { font-size: var(--ucs-fontsize-57); }
+	.fs-xxl-58 { font-size: var(--ucs-fontsize-58); }
+	.fs-xxl-59 { font-size: var(--ucs-fontsize-59); }
+	.fs-xxl-60 { font-size: var(--ucs-fontsize-60); }
+	.fs-xxl-61 { font-size: var(--ucs-fontsize-61); }
+	.fs-xxl-62 { font-size: var(--ucs-fontsize-62); }
+	.fs-xxl-63 { font-size: var(--ucs-fontsize-63); }
+	.fs-xxl-64 { font-size: var(--ucs-fontsize-64); }
+	.fs-xxl-65 { font-size: var(--ucs-fontsize-65); }
+	.fs-xxl-66 { font-size: var(--ucs-fontsize-66); }
+	.fs-xxl-67 { font-size: var(--ucs-fontsize-67); }
+	.fs-xxl-68 { font-size: var(--ucs-fontsize-68); }
+	.fs-xxl-69 { font-size: var(--ucs-fontsize-69); }
+	.fs-xxl-70 { font-size: var(--ucs-fontsize-70); }
+	.fs-xxl-71 { font-size: var(--ucs-fontsize-71); }
+	.fs-xxl-72 { font-size: var(--ucs-fontsize-72); }
+	.fs-xxl-73 { font-size: var(--ucs-fontsize-73); }
+	.fs-xxl-74 { font-size: var(--ucs-fontsize-74); }
+	.fs-xxl-75 { font-size: var(--ucs-fontsize-75); }
+	.fs-xxl-76 { font-size: var(--ucs-fontsize-76); }
+	.fs-xxl-77 { font-size: var(--ucs-fontsize-77); }
+	.fs-xxl-78 { font-size: var(--ucs-fontsize-78); }
+	.fs-xxl-79 { font-size: var(--ucs-fontsize-79); }
+	.fs-xxl-80 { font-size: var(--ucs-fontsize-80); }
+	.fs-xxl-81 { font-size: var(--ucs-fontsize-81); }
+	.fs-xxl-82 { font-size: var(--ucs-fontsize-82); }
+	.fs-xxl-83 { font-size: var(--ucs-fontsize-83); }
+	.fs-xxl-84 { font-size: var(--ucs-fontsize-84); }
+	.fs-xxl-85 { font-size: var(--ucs-fontsize-85); }
+	.fs-xxl-86 { font-size: var(--ucs-fontsize-86); }
+	.fs-xxl-87 { font-size: var(--ucs-fontsize-87); }
+	.fs-xxl-88 { font-size: var(--ucs-fontsize-88); }
+	.fs-xxl-89 { font-size: var(--ucs-fontsize-89); }
+	.fs-xxl-90 { font-size: var(--ucs-fontsize-90); }
+	.fs-xxl-91 { font-size: var(--ucs-fontsize-91); }
+	.fs-xxl-92 { font-size: var(--ucs-fontsize-92); }
+	.fs-xxl-93 { font-size: var(--ucs-fontsize-93); }
+	.fs-xxl-94 { font-size: var(--ucs-fontsize-94); }
+	.fs-xxl-95 { font-size: var(--ucs-fontsize-95); }
+	.fs-xxl-96 { font-size: var(--ucs-fontsize-96); }
+	.fs-xxl-97 { font-size: var(--ucs-fontsize-97); }
+	.fs-xxl-98 { font-size: var(--ucs-fontsize-98); }
+	.fs-xxl-99 { font-size: var(--ucs-fontsize-99); }
+	.fs-xxl-100 { font-size: var(--ucs-fontsize-100); }
+
+}
