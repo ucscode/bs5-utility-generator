@@ -59,6 +59,9 @@ class Generator
         return implode("\n", $linearStyle);
     }
 
+    /**
+     * Generate the :root variables
+     */
     private function generateVars(): void
     {
         for($x = 1; $x <= $this->range; $x++) {
@@ -69,6 +72,9 @@ class Generator
         }
     }
 
+    /**
+     * Generate each font size rule.
+     */
     private function generateRules(): void
     {
         foreach($this->media as $size => $query) {
@@ -76,7 +82,7 @@ class Generator
             foreach($this->vars as $index => $attribute) {
                 
                 $selector = sprintf(".fs-%s%spx", !empty($size) ? "{$size}-" : '', $index);
-                $value = sprintf("font-size: var(%s);", $attribute['name']);
+                $value = sprintf("font-size: var(%s) !important;", $attribute['name']);
                 
                 $this->style[$size] ??= [
                     'media' => $query,
