@@ -1,54 +1,90 @@
-# Bootstrap Responsive Font Size
+# Bootstrap Responsive CSS Generator
 
-A flexible and maintainable stylesheet providing responsive font size utilities using CSS variables, fully compatible with Bootstrap 5 breakpoints. 
+A flexible PHP class for generating responsive CSS utility classes using custom properties (`--css-vars`) and Bootstrap 5-style media queries. Create scalable, maintainable styles like responsive font sizes, widths, or any other CSS property using consistent class patterns.
 
-## Features
+---
 
-- Predefined font size classes from `fs-1px` to `fs-100px`.
-- Responsive font size classes for different breakpoints, e.g., `fs-md-2px`, `fs-xxl-10px`.
-- Uses CSS variables for easy customization of font sizes.
-- Generator source code to create custom selectors and range of font sizes
+## ✨ Features
 
-## Usage
+- 🧱 Generates `:root` CSS variables (`--bs-font-12`, `--bs-width-90`, etc.)
+- 📱 Responsive class support via Bootstrap 5 breakpoints (`.fs-sm-12`, `.w-xl-90`, etc.)
+- 💡 Easily configurable for **any CSS property** — not just font sizes
+- ⚡ Outputs valid CSS for quick inclusion or injection into your projects
+- 🧩 Fully extendable for custom ranges, units, or breakpoints
 
-Include the CSS file in your HTML:
+---
 
-```html
-<link rel="stylesheet" href="path/to/fontsize.css">
+
+## 🚀 Usage
+
+### Generate Responsive Width Utility Classes
+
+```php
+use Ucscode\Bs5AutoCss\Generator;
+
+$generator = new Generator(
+    property: 'width',
+    varPrefix: '--bs-width-',
+    classPrefix: 'w-',
+    range: [25, 50, 75, 90, 100],
+    unit: '%'
+);
+
+$css = $generator->generate();
+file_put_contents('widths.css', $css);
 ```
 
-Then, use the classes in your HTML elements:
+---
 
-```html
-<p class="fs-1px">This is a very small text.</p>
-<p class="fs-md-2px">This text gets slightly larger on medium screens.</p>
-<p class="fs-xxl-10px">This text is quite large on extra extra large screens.</p>
+## ⚙️ Constructor Parameters
+
+```php
+new Generator(
+    string $property = 'font-size',
+    string $varPrefix = '--bs-font-',
+    string $classPrefix = 'fs-',
+    array|int $range = 100,
+    string $unit = 'px'
+);
 ```
 
-## Customization
+| Parameter      | Description                                                           |
+| -------------- | --------------------------------------------------------------------- |
+| `$property`    | The CSS property to generate classes for (e.g., `width`, `font-size`) |
+| `$varPrefix`   | The prefix used in CSS variable names                                 |
+| `$classPrefix` | The prefix used in generated utility class names                      |
+| `$range`       | Accepts an integer (1 to N) or an array of exact values               |
+| `$unit`        | Appended to each value (`px`, `%`, `rem`, etc.)                       |
 
-You can customize the font sizes by overriding the CSS variables in your own stylesheets or inline styles:
+---
+
+## 📁 Output Example
+
+### For `.fs-xl-14`:
 
 ```css
 :root {
-  --ucs-fontsize-1: 0.75rem;
-  --ucs-fontsize-2: 1rem;
-  /* ... */
+    --bs-font-14: 14px;
+}
+
+@media (min-width:1200px) {
+    .fs-xl-14 {
+        font-size: var(--bs-font-14) !important;
+    }
 }
 ```
 
-You can also limit it to the scope of a particular selector
+---
 
-```css
-.my-selector {
-    --ucs-fontsize-1: 2px;
-}
-```
+## 🧪 Suggested Use Cases
 
-## Browser Support
+* Generate font-size utilities
+* Generate spacing (margin/padding) utilities
+* Width or height classes
+* Border radius, line-height, etc.
 
-This project uses CSS variables, which are not supported in Internet Explorer. If you need to support that browser, consider using a post-processor like PostCSS.
+---
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License — free for personal and commercial use.

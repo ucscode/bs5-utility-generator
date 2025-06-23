@@ -1,13 +1,12 @@
 <?php
 
-namespace Ucscode\Style;
+namespace Ucscode\Bs5AutoCss;
 
 class Generator
 {
-    // :root { --variables: values }
-    private $vars = [];
+    private array $vars = [];
 
-    private $media = [
+    private array $media = [
         '' => null,
         'sm' => '@media (min-width:576px)',
         'md' => '@media (min-width:768px)',
@@ -16,10 +15,28 @@ class Generator
         'xxl' => '@media (min-width:1400px)',
     ];
     
-    private $style = [];
+    private array $style = [];
 
-    public function __construct(protected int $range = 100)
-    {
+    /**
+     * Generator constructor.
+     *
+     * Initializes the responsive CSS generator with configurable options for the
+     * CSS property, variable prefix, class prefix, value range, and unit.
+     * It automatically generates both the root variables and responsive utility classes.
+     *
+     * @param string     $property    The CSS property to target (e.g., 'font-size', 'width').
+     * @param string     $varPrefix   The prefix for the CSS variable names (e.g., '--bs-font-', '--bs-width-').
+     * @param string     $classPrefix The prefix for the utility class names (e.g., 'fs-', 'w-').
+     * @param array|int  $range       an array of numeric values (e.g., [25, 50, 75, 100]).
+     * @param string     $unit        The unit to append to each value (e.g., 'px', '%', 'rem').
+     */
+    public function __construct(
+        protected string $property, // e.g "font-size"
+        protected string $varPrefix, // e.g "--bs-font"
+        protected string $classPrefix, // e.g "fs-"
+        protected array $range, // e.g [10, 20, 30...]
+        protected string $unit = 'px' // e.g "%", "em", ...
+    ) {
         $this->generateVars();
         $this->generateRules();
     }
@@ -27,97 +44,77 @@ class Generator
     public function generate(): string
     {
         $linearStyle = [$this->getDocblock()];
-        
         $linearStyle[] = ":root {";
 
-        foreach($this->vars as $attribute) {
+        foreach ($this->vars as $attribute) {
             $linearStyle[] = sprintf("\t%s: %s;", $attribute['name'], $attribute['value']);
         }
 
         $linearStyle[] = "}\n";
 
-        foreach($this->style as $attribute) {
-            /** @var ?string */
+        foreach ($this->style as $attribute) {
             $media = $attribute['media'];
-            
-            if($media) {
-                $linearStyle[] = sprintf("\n%s %s\n", $media, '{');
+
+            if ($media) {
+                $linearStyle[] = sprintf("\n%s {", $media);
             }
 
-            foreach($attribute['rules'] as $rule) {
-                if(!empty($media)) {
-                    $rule = "\t" . $rule;
-                }
-                $linearStyle[] = $rule;
+            foreach ($attribute['rules'] as $rule) {
+                $linearStyle[] = $media ? "\t$rule" : $rule;
             }
 
-            if($media) {
-                $linearStyle[] = "\n}";
+            if ($media) {
+                $linearStyle[] = "}";
             }
-        };
+        }
 
         return implode("\n", $linearStyle);
     }
 
-    /**
-     * Generate the :root variables
-     */
     private function generateVars(): void
     {
-        for($x = 1; $x <= $this->range; $x++) {
-            $this->vars[$x] = [
-                'name' => "--ucs-fontsize-{$x}",
-                'value' => "{$x}px"
+        foreach ($this->range as $val) {
+            $this->vars[$val] = [
+                'name' => $this->varPrefix . $val,
+                'value' => $val . $this->unit,
             ];
         }
     }
 
-    /**
-     * Generate each font size rule.
-     */
     private function generateRules(): void
     {
-        foreach($this->media as $size => $query) {
+        foreach ($this->media as $size => $query) {
+            foreach ($this->vars as $key => $attribute) {
+                $selector = sprintf(
+                    '.%s%s%s',
+                    $this->classPrefix,
+                    $size !== '' ? $size . '-' : '',
+                    $key
+                );
 
-            foreach($this->vars as $index => $attribute) {
-                
-                $selector = sprintf(".fs-%s%spx", !empty($size) ? "{$size}-" : '', $index);
-                $value = sprintf("font-size: var(%s) !important;", $attribute['name']);
-                
-                $this->style[$size] ??= [
-                    'media' => $query,
-                    'rules' => [],
-                ];
+                $rule = sprintf("%s: var(%s) !important;", $this->property, $attribute['name']);
 
-                $this->style[$size]['rules'][$index] = sprintf("%s { %s }", $selector, $value);
+                $this->style[$size] ??= ['media' => $query, 'rules' => []];
+                $this->style[$size]['rules'][$key] = sprintf("%s { %s }", $selector, $rule);
             }
-
         }
     }
 
     private function getDocblock(): string
     {
-        $docblock = "/*!
-        * Responsive Font Size Stylesheet
-        * 
-        * This stylesheet provides a set of utility classes for responsive font sizes,
-        * compatible with Bootstrap 5's breakpoints. It leverages CSS custom properties 
-        * (variables) to allow easy customization and scalability of font sizes across 
-        * different screen sizes.
+        return <<<EOD
+        /*!
+        * Responsive Utility Stylesheet
         *
-        * Features:
-        * - Responsive font size classes using Bootstrap breakpoints (xs, sm, md, lg, xl, xxl).
-        * - Utilizes CSS variables for flexible and maintainable font size management.
-        * - Easy integration with Bootstrap 5 projects.
-        * - Simple to extend with additional font sizes or custom breakpoints.
+        * This stylesheet dynamically generates utility classes for the CSS property `{$this->property}`.
+        * Variables use the prefix `{$this->varPrefix}`, and class names use the prefix `{$this->classPrefix}`.
+        * Responsive variants are created based on Bootstrap 5 breakpoints.
         *
         * Author: Uchenna Ajah
-        * Repository: https://github.com/ucscode/bootstrap-responsive-stylesheet
-        * Version: 1.0.0
+        * Repository: https://github.com/ucscode/bs5-utility-generator
+        * Version: 2.0.0
         * License: MIT
         */
-        ";
-
-        return implode("\n", array_map('trim', explode("\n", $docblock)));
+        EOD;
     }
 }

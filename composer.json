@@ -1,11 +1,10 @@
 {
-    "name": "ucscode/bootstrap-responsive-fontsize",
-    "description": "Generate a bootstrap responsive fontsize stylesheet.css",
+    "name": "ucscode/bs5-utility-generator",
+    "description": "Generate responsive bootstrap 5 css utilities",
     "license": "MIT",
-    "require": {},
     "autoload": {
         "psr-4": {
-            "Ucscode\\Style\\": "src/"
+            "Ucscode\\Bs5AutoCss\\": "src/"
         }
     }
 }
