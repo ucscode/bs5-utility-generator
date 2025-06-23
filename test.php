@@ -22,6 +22,6 @@ echo (new Generator(
     property: 'width',
     varPrefix: '--bs-width-',
     classPrefix: 'w-',
-    range: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+    range: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 'auto'],
     unit: '%'
 ))->generate();

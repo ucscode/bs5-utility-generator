@@ -76,7 +76,7 @@ class Generator
         foreach ($this->range as $val) {
             $this->vars[$val] = [
                 'name' => $this->varPrefix . $val,
-                'value' => $val . $this->unit,
+                'value' => $val . (is_numeric($val) ? $this->unit : ''),
             ];
         }
     }
