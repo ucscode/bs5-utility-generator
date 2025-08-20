@@ -21,18 +21,28 @@ class Generator
      * Generator constructor.
      *
      * Initializes the responsive CSS generator with configurable options for the
-     * CSS property, variable prefix, class prefix, value range, and unit.
+     * CSS property, variable prefix, class prefix, value range, and unit.  
      * It automatically generates both the root variables and responsive utility classes.
      *
-     * @param string     $property    The CSS property to target (e.g., 'font-size', 'width').
-     * @param string     $varPrefix   The prefix for the CSS variable names (e.g., '--bs-font-', '--bs-width-').
-     * @param string     $classPrefix The prefix for the utility class names (e.g., 'fs-', 'w-').
-     * @param array|int  $range       an array of numeric values (e.g., [25, 50, 75, 100]).
-     * @param string     $unit        The unit to append to each value (e.g., 'px', '%', 'rem').
+     * @param string $property          
+     * The css property to target (e.g., 'font-size', 'width', 'background-color').
+     * 
+     * @param string $variablePrefix    
+     * A custom css variable names prefix to use within ":root" (e.g., '--bs-font-', '--bs-width-').
+     * 
+     * @param string $classPrefix       
+     * The prefix for the utility class names (e.g., 'fs-', 'w-').
+     * 
+     * @param array $range             
+     * An array of numeric values to use as suffix for bootstrap media sizes (e.g., [25, 50, 75, 100]).  
+     * This will provide classes such as: *-sm-25, *-md-25, *-sm-50, *-md-50 etc
+     * 
+     * @param string $unit              
+     * The unit to append to each value (e.g., 'px', '%', 'rem').
      */
     public function __construct(
         protected string $property, // e.g "font-size"
-        protected string $varPrefix, // e.g "--bs-font"
+        protected string $variablePrefix, // e.g "--bs-font"
         protected string $classPrefix, // e.g "fs-"
         protected array $range, // e.g [10, 20, 30...]
         protected string $unit = 'px' // e.g "%", "em", ...
@@ -75,7 +85,7 @@ class Generator
     {
         foreach ($this->range as $val) {
             $this->vars[$val] = [
-                'name' => $this->varPrefix . $val,
+                'name' => $this->variablePrefix . $val,
                 'value' => $val . (is_numeric($val) ? $this->unit : ''),
             ];
         }
@@ -107,7 +117,7 @@ class Generator
         * Responsive Utility Stylesheet
         *
         * This stylesheet dynamically generates utility classes for the CSS property `{$this->property}`.
-        * Variables use the prefix `{$this->varPrefix}`, and class names use the prefix `{$this->classPrefix}`.
+        * Variables use the prefix `{$this->variablePrefix}`, and class names use the prefix `{$this->classPrefix}`.
         * Responsive variants are created based on Bootstrap 5 breakpoints.
         *
         * Author: Uchenna Ajah
